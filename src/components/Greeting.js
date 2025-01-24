@@ -4,7 +4,7 @@ export default function Greeting() {
   return (
     <View style={styles.container}>
       <Text style={styles.text} accessibilityLabel="greeting" testID="greeting">
-        Yagga!
+        Yagga yo!
       </Text>
     </View>
   );
