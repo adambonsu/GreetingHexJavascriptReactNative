@@ -1,10 +1,24 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+const {
+  StringUserInterface,
+  GreetingService,
+} = require("@adambonsu/greeting-hex-javascript");
+
 export default function Greeting() {
+  let greeting = "";
+  try {
+    const userInterface = new StringUserInterface();
+    const greetingService = new GreetingService(userInterface);
+    greeting = greetingService.greet();
+  } catch (error) {
+    console.error(error);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text} accessibilityLabel="greeting" testID="greeting">
-        Yagga yo!
+        {greeting}
       </Text>
     </View>
   );
